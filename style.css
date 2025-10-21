@@ -1,6 +1,8 @@
 body {
     font-family: 'Aptos Narrow', sans-serif;
     background-color: #f7f9fc;
+    margin: 0;
+    padding-bottom: 60px; /* لتجنب تغطية الفوتر */
 }
 
 h1 {
@@ -9,6 +11,7 @@ h1 {
 
 table th, table td {
     vertical-align: middle;
+    word-break: break-word; /* لتجنب تجاوز النصوص */
 }
 
 .name1 {
@@ -18,4 +21,25 @@ table th, table td {
 .name {
     color: #e5ff00;
     font-size: larger;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+input#search {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* تحجيم الخط للهواتف الصغيرة */
+@media (max-width: 576px) {
+    table th, table td {
+        font-size: 0.8rem;
+        padding: 0.3rem;
+    }
+    #search {
+        font-size: 0.9rem;
+    }
 }
