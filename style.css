@@ -33,6 +33,12 @@ input#search {
     margin: 0 auto;
 }
 
+.modal-body p {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+
 /* تحجيم الخط للهواتف الصغيرة */
 @media (max-width: 576px) {
     table th, table td {
