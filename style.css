@@ -1,3 +1,4 @@
+/* style.css النهائي */
 body {
     font-family: 'Aptos Narrow', sans-serif;
     background-color: #f7f9fc;
@@ -23,7 +24,7 @@ table th, table td {
     font-size: larger;
 }
 
-/* ✅ الصورة الآن تستجيب تلقائيًا عبر HTML */
+/* الصورة الآن تستجيب تلقائيًا عبر HTML */
 img {
     max-width: 100%;
     height: auto;
@@ -47,4 +48,13 @@ input#search {
     #search {
         font-size: 0.9rem;
     }
+}
+
+/* الهيدر الآن موحد ومركزي */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }

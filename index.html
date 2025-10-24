@@ -4,94 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سطور البحث العلمي</title>
-    <!-- Bootstrap RTL -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="صفحة معرض سطور – عرض كتب دار سطور، بحث سريع، معلومات الكتب، معرض الشارقة للكتاب 2025">
+
+    <!-- Critical CSS inline لتسريع LCP -->
+    <style>
+        body { font-family:'Aptos Narrow',sans-serif; background-color:#f7f9fc; margin:0; padding-bottom:60px; }
+        header { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+        input#search { max-width:500px; margin:0 auto; }
+        table th, table td { vertical-align:middle; word-break:break-word; }
+        img { max-width:100%; height:auto; }
+        .name1 { font-family: 'Cairo', sans-serif; }
+        .name { color:#e5ff00; font-size:larger; }
+        .modal-body p { margin-bottom:0.5rem; font-size:1rem; }
+        @media (max-width:576px) {
+            table th, table td { font-size:0.8rem; padding:0.3rem; }
+            #search { font-size:0.9rem; }
+        }
+    </style>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+
+    <!-- CSS ثانوي -->
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+
 </head>
+
 <body>
-    <div class="container-fluid py-4 text-center">
+  
+  <header class="py-4 d-flex flex-column align-items-center justify-content-center text-center">
+    <a href="https://suotuor.com/ar">
+        <picture>
+            <source type="image/webp"
+                srcset="
+                    https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=200,format=webp/DDpXV/i47VyxlTsAroPzUB10pfewuQQVgJa5XH8FquJ0ZM.png 200w,
+                    https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=400,format=webp/DDpXV/i47VyxlTsAroPzUB10pfewuQQVgJa5XH8FquJ0ZM.png 400w,
+                    https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=800,format=webp/DDpXV/i47VyxlTsAroPzUB10pfewuQQVgJa5XH8FquJ0ZM.png 800w
+                "
+                sizes="(max-width: 576px) 60vw, (max-width: 992px) 30vw, 15vw">
+            <img src="https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=400,height=400,onerror=redirect,format=auto/DDpXV/i47VyxlTsAroPzUB10pfewuQQVgJa5XH8FquJ0ZM.png"
+                srcset="
+                    https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=200,height=200,onerror=redirect,format=auto/DDpXV/i47VyxlTsAroPzUB10pfewuQQVgJa5XH8FquJ0ZM.png 200w,
+                    https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=400,height=400,onerror=redirect,format=auto/DDpXV/i47VyxlTsAroPzUB10pfewuQQVgJa5XH8FquJ0ZM.png 400w,
+                    https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=800,height=800,onerror=redirect,format=auto/DDpXV/i47VyxlTsAroPzUB10pfewuQQVgJa5XH8FquJ0ZM.png 800w
+                "
+                sizes="(max-width: 576px) 60vw, (max-width: 992px) 30vw, 15vw"
+                alt="main-logo" class="img-fluid mb-3" loading="lazy">
+        </picture>
+    </a>
 
-        <!-- ✅ تحسين تحميل الصورة باستخدام srcset و sizes -->
-        <a href="https://suotuor.com/ar">
-            <picture>
-                <!-- صيغة WebP الحديثة -->
-                <source
-                    type="image/webp"
-                    srcset="
-                        https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=200,format=webp/DDpXV/i47VyxlTsAroPzUB10pfewuQQVgJa5XH8FquJ0ZM.png 200w,
-                        https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=400,format=webp/DDpXV/i47VyxlTsAroPzUB10pfewuQQVgJa5XH8FquJ0ZM.png 400w,
-                        https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=800,format=webp/DDpXV/i47VyxlTsAroPzUB10pfewuQQVgJa5XH8FquJ0ZM.png 800w
-                    "
-                    sizes="(max-width: 576px) 60vw, (max-width: 992px) 30vw, 15vw">
-                
-                <!-- fallback بصيغة PNG -->
-                <img
-                    src="https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=400,height=400,onerror=redirect,format=auto/DDpXV/i47VyxlTsAroPzUB10pfewuQQVgJa5XH8FquJ0ZM.png"
-                    srcset="
-                        https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=200,height=200,onerror=redirect,format=auto/DDpXV/i47VyxlTsAroPzUB10pfewuQQVgJa5XH8FquJ0ZM.png 200w,
-                        https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=400,height=400,onerror=redirect,format=auto/DDpXV/i47VyxlTsAroPzUB10pfewuQQVgJa5XH8FquJ0ZM.png 400w,
-                        https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=800,height=800,onerror=redirect,format=auto/DDpXV/i47VyxlTsAroPzUB10pfewuQQVgJa5XH8FquJ0ZM.png 800w
-                    "
-                    sizes="(max-width: 576px) 60vw, (max-width: 992px) 30vw, 15vw"
-                    alt="main-logo"
-                    class="img-fluid mb-3"
-                    loading="lazy">
-            </picture>
-        </a>
-        <!-- ✅ نهاية تحسين الصورة -->
+    <h3 class="mb-4 text-muted name1">معرض الشارقة الدولي للكتاب 2025</h3>
+  </header>
 
-        <h3 class="mb-4 text-muted name1">معرض الشارقة الدولي للكتاب 2025</h3>
+  <main role="main" class="container-fluid py-4 text-center">
+      <input type="text" id="search" class="form-control mb-3" placeholder="ابحث عن كتاب أو مؤلف أو محقق أو سنة النشر...">
+      <div id="resultCount" class="text-muted mb-4">عدد نتائج البحث: 0</div>
 
-        <input type="text" id="search" class="form-control mb-3" placeholder="ابحث عن كتاب أو مؤلف أو محقق أو سنة النشر...">
-        <div id="resultCount" class="text-muted mb-4">عدد نتائج البحث: 0</div>
+      <div class="table-responsive mb-4">
+          <table class="table table-bordered table-striped text-center" id="booksTable">
+              <thead class="table-dark">
+                  <tr>
+                      <th>م</th>
+                      <th>اسم الكتاب</th>
+                      <th>اسم المؤلف</th>
+                      <th>اسم المحقق</th>
+                      <th>دار النشر</th>
+                      <th>سنة النشر</th>
+                      <th>سعر البيع</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <!-- البيانات سيتم تحميلها هنا عبر JS -->
+              </tbody>
+          </table>
+      </div>
+  </main>
 
-        <div class="table-responsive mb-4">
-            <table class="table table-bordered table-striped text-center" id="booksTable">
-                <thead class="table-dark">
-                    <tr>
-                        <th>م</th>
-                        <th>اسم الكتاب</th>
-                        <th>اسم المؤلف</th>
-                        <th>اسم المحقق</th>
-                        <th>دار النشر</th>
-                        <th>سنة النشر</th>
-                        <th>سعر البيع</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- البيانات سيتم تحميلها هنا عبر JS -->
-                </tbody>
-            </table>
+  <!-- Modal تفاصيل الكتاب -->
+  <div class="modal fade" id="bookModal" tabindex="-1" aria-labelledby="bookModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="bookModalLabel">تفاصيل الكتاب</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button>
         </div>
-    </div>
-
-    <!-- Modal تفاصيل الكتاب -->
-<div class="modal fade" id="bookModal" tabindex="-1" aria-labelledby="bookModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="bookModalLabel">تفاصيل الكتاب</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button>
-      </div>
-      <div class="modal-body text-start" id="modalBody">
-        <!-- تفاصيل الكتاب سيتم إدراجها هنا -->
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+        <div class="modal-body text-start" id="modalBody">
+          <!-- تفاصيل الكتاب سيتم إدراجها هنا -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
+  <footer role="contentinfo" class="bg-dark text-white text-center py-3 fixed-bottom">
+      صُنع بـ💖 <a class="name" href="https://github.com/Adam-Books">آدم شهاب</a> © 2025
+  </footer>
 
-    <footer class="bg-dark text-white text-center py-3 fixed-bottom">
-        صُنع بـ💖 <a class="name" href="https://github.com/Adam-Books">آدم شهاب</a> © 2025
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+  <!-- JS مع defer لتسريع العرض -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="script.js" defer></script>
 
 </body>
 </html>
