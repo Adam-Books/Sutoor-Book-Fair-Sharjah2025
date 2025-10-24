@@ -5,10 +5,16 @@ $(document).ready(function(){
     $('#resultCount').hide();
 
     // تحميل بيانات JSON
-    $.getJSON('books.json', function(data){
-        books = data;
-        displayBooks(books);
-    });
+    fetch('books.json')
+      .then(response => {
+          if (!response.ok) throw new Error('خطأ في تحميل JSON');
+          return response.json();
+      })
+      .then(data => {
+          books = data;
+          displayBooks(books);
+      })
+      .catch(error => console.error(error));
 
     // البحث الفوري
     $('#search').on('input', function(){
@@ -24,8 +30,6 @@ $(document).ready(function(){
     });
 });
 
-
-// دالة لتصفية البحث مع معالجة الهمزة
 function searchMatch(book, query){
     if(!query) return true;
     const normalize = str => str.replace(/[أإآ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').toLowerCase();
@@ -33,7 +37,6 @@ function searchMatch(book, query){
     return Object.values(book).some(val => normalize(val.toString()).includes(query));
 }
 
-// دالة عرض البيانات في الجدول
 function displayBooks(data){
     const tbody = $('#booksTable tbody');
     tbody.empty();
@@ -49,7 +52,6 @@ function displayBooks(data){
         </tr>`);
     });
 
-    // تفعيل النقر على اسم الكتاب لفتح Modal
     $('.book-title').click(function(){
         const title = $(this).text();
         const book = data.find(b => b['اسم الكتاب'] === title);

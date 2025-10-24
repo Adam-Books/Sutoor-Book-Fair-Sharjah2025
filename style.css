@@ -11,7 +11,7 @@ h1 {
 
 table th, table td {
     vertical-align: middle;
-    word-break: break-word; /* لتجنب تجاوز النصوص */
+    word-break: break-word;
 }
 
 .name1 {
@@ -23,6 +23,7 @@ table th, table td {
     font-size: larger;
 }
 
+/* ✅ الصورة الآن تستجيب تلقائيًا عبر HTML */
 img {
     max-width: 100%;
     height: auto;
@@ -38,8 +39,6 @@ input#search {
     font-size: 1rem;
 }
 
-
-/* تحجيم الخط للهواتف الصغيرة */
 @media (max-width: 576px) {
     table th, table td {
         font-size: 0.8rem;

@@ -6,13 +6,40 @@
     <title>سطور البحث العلمي</title>
     <!-- Bootstrap RTL -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container-fluid py-4 text-center">
+
+        <!-- ✅ تحسين تحميل الصورة باستخدام srcset و sizes -->
         <a href="https://suotuor.com/ar">
-            <img src="https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=400,height=400,onerror=redirect,format=auto/DDpXV/i47VyxlTsAroPzUB10pfewuQQVgJa5XH8FquJ0ZM.png" alt="main-logo" class="img-fluid mb-3">
+            <picture>
+                <!-- صيغة WebP الحديثة -->
+                <source
+                    type="image/webp"
+                    srcset="
+                        https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=200,format=webp/DDpXV/i47VyxlTsAroPzUB10pfewuQQVgJa5XH8FquJ0ZM.png 200w,
+                        https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=400,format=webp/DDpXV/i47VyxlTsAroPzUB10pfewuQQVgJa5XH8FquJ0ZM.png 400w,
+                        https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=800,format=webp/DDpXV/i47VyxlTsAroPzUB10pfewuQQVgJa5XH8FquJ0ZM.png 800w
+                    "
+                    sizes="(max-width: 576px) 60vw, (max-width: 992px) 30vw, 15vw">
+                
+                <!-- fallback بصيغة PNG -->
+                <img
+                    src="https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=400,height=400,onerror=redirect,format=auto/DDpXV/i47VyxlTsAroPzUB10pfewuQQVgJa5XH8FquJ0ZM.png"
+                    srcset="
+                        https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=200,height=200,onerror=redirect,format=auto/DDpXV/i47VyxlTsAroPzUB10pfewuQQVgJa5XH8FquJ0ZM.png 200w,
+                        https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=400,height=400,onerror=redirect,format=auto/DDpXV/i47VyxlTsAroPzUB10pfewuQQVgJa5XH8FquJ0ZM.png 400w,
+                        https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=800,height=800,onerror=redirect,format=auto/DDpXV/i47VyxlTsAroPzUB10pfewuQQVgJa5XH8FquJ0ZM.png 800w
+                    "
+                    sizes="(max-width: 576px) 60vw, (max-width: 992px) 30vw, 15vw"
+                    alt="main-logo"
+                    class="img-fluid mb-3"
+                    loading="lazy">
+            </picture>
         </a>
+        <!-- ✅ نهاية تحسين الصورة -->
 
         <h3 class="mb-4 text-muted name1">معرض الشارقة الدولي للكتاب 2025</h3>
 
@@ -65,5 +92,6 @@
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
+
 </body>
 </html>
