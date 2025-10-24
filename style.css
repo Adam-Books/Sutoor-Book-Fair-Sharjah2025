@@ -10,11 +10,6 @@ h1 {
     color: #2c3e50;
 }
 
-table th, table td {
-    vertical-align: middle;
-    word-break: break-word;
-}
-
 .name1 {
     font-family: 'Cairo', sans-serif;
 }
@@ -31,8 +26,9 @@ img {
 }
 
 input#search {
-    max-width: 500px;
+    max-width: 70%;
     margin: 0 auto;
+    text-align: center;
 }
 
 .modal-body p {
@@ -48,13 +44,7 @@ input#search {
     #search {
         font-size: 0.9rem;
     }
-}
-
-/* الهيدر الآن موحد ومركزي */
-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    input#search {
+    max-width: 500px;
+    }
 }
